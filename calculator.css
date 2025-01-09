@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #1a1a2e, #16213e, #0f3460);
+    box-shadow: inset 0px 0px 50px rgba(0, 0, 0, 0.9), 0px 0px 50px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Adding floating glowing effect on the background */
+body::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+    border-radius: 50%;
+    filter: blur(150px);
+    animation: moveGlow 6s infinite alternate ease-in-out;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes moveGlow {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        transform: translate(-45%, -55%) scale(1.2);
+    }
+}
+
+.calculator {
+    border: 1px solid rgba(58, 68, 82, 0.6);
+    padding: 20px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.6), 0px -3px 10px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    text-align: center;
+    z-index: 1;
+}
+
+input {
+    width: 320px;
+    border: none;
+    padding: 20px;
+    margin: 10px 0;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0px 2px 5px rgba(255, 255, 255, 0.2), 0px 4px 10px rgba(0, 0, 0, 0.2);
+    font-size: 32px;
+    text-align: right;
+    color: #ffffff;
+    outline: none;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
+}
+
+input:focus {
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.4), 0px 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+button {
+    border: none;
+    width: 70px;
+    height: 70px;
+    margin: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-size: 22px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5), inset 0px -3px 5px rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease, transform 0.2s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.15);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 8px 30px rgba(255, 255, 255, 0.2), 0px 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+.equals {
+    color: white;
+    background: linear-gradient(45deg, #ff5733, #c70039);
+    box-shadow: 0px 10px 30px rgba(199, 0, 57, 0.6), inset 0px -3px 5px rgba(255, 255, 255, 0.2);
+}
+
+.equals:hover {
+    transform: scale(1.2);
+    background: linear-gradient(45deg, #ff6f47, #d00047);
+}
+
+.action {
+    color: #6ab04c;
+    background: rgba(106, 176, 76, 0.3);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5), inset 0px -2px 4px rgba(255, 255, 255, 0.1);
+
+}
+
+.action:hover {
+    background: rgba(106, 176, 76, 0.5);
+    box-shadow: 0px 8px 30px rgba(106, 176, 76, 0.6), 0px 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+.operator {
+    color: #00d2ff;
+    background: rgba(0, 210, 255, 0.2);
+    box-shadow: 0px 8px 15px rgba(0, 210, 255, 0.4), inset 0px -2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.operator:hover {
+    background: rgba(0, 210, 255, 0.4);
+    box-shadow: 0px 8px 30px rgba(0, 210, 255, 0.6), 0px 6px 20px rgba(0, 0, 0, 0.6);
+}
